@@ -1,5 +1,8 @@
 # news_portal_backend
-Fake news portal backend, simple, MongoDB, Express, Nodejs, Passport, Jsonwebtoken..
+Fake news portal backend, using MongoDB, Express, Nodejs, Passport, Jsonwebtoken..
+
+# Setup
+Add your mongoURI and secret to the "./config/default.json"
 
 # Start
-Download and run: npm run server
+Download or clone: npm install and npm run server

@@ -3,10 +3,11 @@ const extractJwt = require('passport-jwt').ExtractJwt
 const mongoose = require('mongoose')
 require('./models/User')
 const User = mongoose.model('users')
+const secretOrKey = require("./config/default").secretOrKey
 
 const options = {}
 options.jwtFromRequest = extractJwt.fromAuthHeaderAsBearerToken()
-options.secretOrKey = 'secret'
+options.secretOrKey = secretOrKey
 
 module.exports = passport => {
   passport.use(

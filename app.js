@@ -2,6 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const passport = require('passport')
 const bodyParser = require('body-parser')
+const db = require("./config/default").mongoURI
 
 const users = require('./api/Users')
 const articles = require('./api/Articles')
@@ -11,10 +12,9 @@ const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-const mongoURI = 'mongodb://amer:amer123@ds163054.mlab.com:63054/news-portal'
 mongoose
   .connect(
-    mongoURI,
+    db,
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB connected'))
